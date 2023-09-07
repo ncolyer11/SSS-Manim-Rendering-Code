@@ -1,4 +1,4 @@
-#l desc: we need to multiply the chance of the trunk height by the chance of the layer value set
+# desc: we need to multiply the chance of the trunk height by the chance of the layer value set
 
 from FaR import search_shapes_in_text
 from manim import*
@@ -41,10 +41,10 @@ class smp_shot_6(Scene):
 
         trunk_height_formula = Tex(
                             r"\textbf{Trunk Height Formula:}\\",
-                            r"T = random.int(4, 13)"
+                            r"T$_h$ = random.int(4, 13)"
                         ).shift(UP * 0.54)
         
-        for group in search_shapes_in_text(trunk_height_formula, [Tex(r"T")], index=1):
+        for group in search_shapes_in_text(trunk_height_formula, [Tex(r"T$_h$")], index=1):
                 trunk_height_formula[1][group].set_color(trunk_height_colour)
         self.wait(0.5*speed)
 
@@ -57,13 +57,13 @@ class smp_shot_6(Scene):
 
         trunk_height_double_formula = Tex(
                             r"\textbf{Trunk Height Formula:}\\",
-                            r"T = rand.int(4, 13)\\",
+                            r"T$_h$ = rand.int(4, 13)\\",
                             r"\textbf{if} rand(0, 1) $< \frac{1}{12}$:\\",
-                            r"T = 2 $\times$ T"
+                            r"T$_h$ = 2 $\cdot$ T$_h$"
                         )
         
         for i in [1,2,3]:
-            for group in search_shapes_in_text(trunk_height_double_formula, [Tex(r"T")], index=i):
+            for group in search_shapes_in_text(trunk_height_double_formula, [Tex(r"T$_h$")], index=i):
                     trunk_height_double_formula[i][group].set_color(trunk_height_colour)
 
         for i in [1,2,3]:
@@ -73,3 +73,4 @@ class smp_shot_6(Scene):
 
         self.play(TransformMatchingShapes(trunk_height_formula, trunk_height_double_formula), run_time=1*speed) 
         self.wait()
+
