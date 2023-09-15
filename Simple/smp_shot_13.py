@@ -6,7 +6,7 @@ from colours import*
 speed = 1
 # speed = 1.0/5
 
-class smp_shot_9(Scene):
+class smp_shot_13(Scene):
     def construct(self):
         self.wait(0.2)
         myTemplate = TexTemplate()
